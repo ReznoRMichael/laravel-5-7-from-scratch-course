@@ -15,7 +15,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // registered will be called for every single method in the config/app.php file
+
+        $this -> app -> bind(
+            \App\Repositories\UserRepository::class,
+            \App\Repositories\DbUserRepository::class
+        );
     }
 
     /**

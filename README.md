@@ -15,13 +15,17 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 * Sending Data to Views
 * Controllers
 * Databases and migrations (Terminal and MySQL)
-* Eloquent relationships, namespacing
+* Eloquent relationships Model, namespacing
 * Basics of MVC (Model, View, Controller)
 * Basic Laravel directory structure review
 * Form handling + built-in CSRF protection
 * PATCH and DELETE requests
 * Mass assignment concerns (protected $fillable, $guarded)
 * Form validation basics
+* Encapsulation - hide internal values and state inside a class
+* Service container and Auto-resolution
+* Service providers
+* Environment configuration (env variables, config files, config:cache/config:clear)
 
 ## Technologies
 

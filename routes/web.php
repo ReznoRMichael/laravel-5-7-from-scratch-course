@@ -33,5 +33,8 @@ Route::delete('/projects/{project}', 'ProjectsController@destroy');
 /* do the same but in one command - with php artisan make:controller -r PostsController -m Post */
 Route::resource('/posts', 'PostsController');
 
+/* update a task (completed/uncompleted) */
 //Route::patch('/projects/{project}/tasks/{task}', 'ProjectTasksController@update');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
+/* Add a new task to the choosen project */
+Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');

@@ -18,4 +18,18 @@ class Task extends Model
     {
         return $this->belongsTo(Project::Class);
     }
+
+    public function complete($completed = true)
+    {
+        // check if the task is completed or not and update accordingly
+        /* $this -> update([
+            'completed' => request() -> has('completed')
+        ]); */
+        $this -> update( compact('completed') );
+    }
+
+    public function incomplete()
+    {
+        $this -> complete(false);
+    }
 }

@@ -29,4 +29,26 @@
 </div>
 @endif
 
+{{-- add a new Task --}}
+
+<div>
+    <form method="POST" action="/projects/{{ $project->id }}/tasks">
+        @csrf
+        <div>
+            <label for="description">New Task</label>
+        </div>
+
+        <input type="text" name="description" placeholder="New Task" required>
+
+        <div class="field">
+            <div class="control">
+                <button type="submit" class="button is-link">Add Task</button>
+            </div>
+        </div>
+
+        @include ('errors')
+        
+    </form>
+</div>
+
 @endsection
