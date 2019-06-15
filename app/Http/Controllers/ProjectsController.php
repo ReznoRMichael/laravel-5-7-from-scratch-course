@@ -8,6 +8,11 @@ use App\Project; // like 'using namespace' in C++
 
 class ProjectsController extends Controller
 {
+    public function __construct()
+    {
+        $this -> middleware('auth');
+        // use with -> only() or except() to exclude some methods
+    }
     public function index()
     {
         $projects = [
@@ -16,7 +21,8 @@ class ProjectsController extends Controller
             'Project 3',
         ];
 
-        $projectsSQL = Project::all(); // or \App\Project
+        //$projectsSQL = Project::all(); // or \App\Project
+        $projectsSQL = Project::where( 'owner_id', auth()->id() ) -> get(); // view only projects of a given owner_id
 
         // resources/views/projects/index.blade.php
         return view('projects.index',
@@ -57,6 +63,8 @@ class ProjectsController extends Controller
         // shorter version
         //Project::create( request( ['title', 'description'] ) );
         // even shorter version
+
+        $attributes['owner_id'] = auth()->id();
         Project::create( $attributes );
 
         // redirect to /projects on finish
@@ -66,6 +74,18 @@ class ProjectsController extends Controller
     // Project $project - doesn't need Project::find
     public function show(Project $project)
     {
+        // don't allow the user viewing projects of other users
+        /* if($project->owner_id !== auth()->id())
+        {
+            abort(403); // abort with 403 Error
+        } */
+
+        // Laravel helper functions for doing the same
+        //abort_if($project->owner_id != auth()->id(), 403);
+        //abort_unless(auth()->user()->owns($project), 403);
+
+        $this -> authorize('update', $project);
+
         return view('projects.show', compact('project') );
     }
 
@@ -73,6 +93,8 @@ class ProjectsController extends Controller
     {
         // find the entry in the database
         //$project = Project::find($id);
+
+        $this -> authorize('update', $project);
 
         return view('projects.edit', compact('project') );
     }
@@ -90,6 +112,8 @@ class ProjectsController extends Controller
         // save the updated project into database
         $project -> save(); */
 
+        $this -> authorize('update', $project);
+
         // shorter version
         $project -> update( request( ['title', 'description'] ));
 
@@ -102,6 +126,8 @@ class ProjectsController extends Controller
         //dd('delete '.$id);
         // find or fail - 404 error on not finding entry
         //$project = Project::findOrFail($id) -> delete();
+
+        $this -> authorize('update', $project);
 
         $project -> delete();
 

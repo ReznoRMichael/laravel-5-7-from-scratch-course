@@ -8,7 +8,7 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 
 ## Currently learned
 
-* Everything until and including Episode 25/38 (Core Concepts: Middleware)
+* Everything until and including Episode 27/38 (Authorization Essentials)
 * Working with a MySQL database (Create, Read, Update, Delete)
 * Web Routes and common routing conventions (index, create, store, show, edit, update, destroy)
 * Blade and Layout files
@@ -29,6 +29,8 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 * Authentication Controller (register/log in system)
 * SQLite database (creating, connection)
 * Middleware (core concepts)
+* Restricting views of logged in users
+* Gate component - Authorization Essentials
 
 ## Technologies
 

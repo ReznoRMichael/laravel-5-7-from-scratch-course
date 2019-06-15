@@ -8,7 +8,7 @@
 
 <div class="content"><a href="/projects/{{ $project->id }}/edit">Edit</a></div>
 
-<div class="content">{{ $project->description }}</div>
+<div class="content"><i>{{ $project->description }}</i></div>
 
 @if ($project->tasks->count())
 <div class="content">
@@ -35,7 +35,7 @@
     <form method="POST" action="/projects/{{ $project->id }}/tasks">
         @csrf
         <div>
-            <label for="description">New Task</label>
+            <label for="description" class="new-task">Add a New Task</label>
         </div>
 
         <input type="text" name="description" placeholder="New Task" required>

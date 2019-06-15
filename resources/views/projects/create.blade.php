@@ -16,10 +16,7 @@
     </div>
 
     <div class="control">
-        <textarea name="description" placeholder="Project description"
-        class="input {{ $errors->has('description') ? 'is-danger' : '' }}" required>
-        {{ old('description') }}
-        </textarea>
+        <textarea name="description" placeholder="Project description" class="input {{ $errors->has('description') ? 'is-danger' : '' }}" required>{{old('description')}}</textarea>
     </div>
 
     <div class="control">

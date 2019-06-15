@@ -14,15 +14,15 @@
         @endforeach
     </ul> --}}
 
-    <ul class="lt-list-inside">
         @foreach ($projectsSQL as $project)
         
-            <li><a href="/projects/{{ $project->id }}">{{ $project->title }}</a> | 
-                <a href="/projects/{{ $project->id }}/edit">Edit</a>
-                <br><i>{{ $project->description }}</i>
-            </li>
+            <div class="projects-list">
+                <div>
+                    <a href="/projects/{{ $project->id }}">{{ $project->title }}</a> | <a href="/projects/{{ $project->id }}/edit">Edit</a>
+                </div><br>
+                <i>{{ $project->description }}</i>
+            </div>
         
         @endforeach
-    </ul>
 
 @endsection

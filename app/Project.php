@@ -8,7 +8,7 @@ class Project extends Model
 {
     // set properties to be filled to avoid error
     protected $fillable = [
-        'title', 'description'
+        'owner_id', 'title', 'description'
     ];
 
     // set properties to avoid filling
