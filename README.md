@@ -8,7 +8,7 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 
 ## Currently learned
 
-* Everything until and including Episode 18/33 (Create New Project Tasks)
+* Everything until and including Episode 25/38 (Core Concepts: Middleware)
 * Working with a MySQL database (Create, Read, Update, Delete)
 * Web Routes and common routing conventions (index, create, store, show, edit, update, destroy)
 * Blade and Layout files
@@ -26,6 +26,9 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 * Service container and Auto-resolution
 * Service providers
 * Environment configuration (env variables, config files, config:cache/config:clear)
+* Authentication Controller (register/log in system)
+* SQLite database (creating, connection)
+* Middleware (core concepts)
 
 ## Technologies
 

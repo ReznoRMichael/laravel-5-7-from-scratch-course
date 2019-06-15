@@ -38,3 +38,6 @@ Route::resource('/posts', 'PostsController');
 Route::patch('/tasks/{task}', 'ProjectTasksController@update');
 /* Add a new task to the choosen project */
 Route::post('/projects/{project}/tasks', 'ProjectTasksController@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

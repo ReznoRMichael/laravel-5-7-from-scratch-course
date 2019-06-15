@@ -15,13 +15,14 @@ use App\Repositories\UserRepository;
 
 class PagesController extends Controller
 {
-    public function home(Twitter $twitter, UserRepository $users)
+    /* public function home(Twitter $twitter, UserRepository $users) */
+    public function home()
     {
         //dd(app(Filesystem::class));
         //dd(app('App\Example')); // a name of the class (auto-resolving)
         //dd(app('example')); // name of the resource in service container
         //dd(app('foo')); // name of the resource registered in the App Service Provider
-        dd($twitter, $users);
+        //dd($twitter, $users);
 
         $tasks = [
             'Go to the store',
