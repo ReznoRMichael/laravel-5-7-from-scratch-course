@@ -6,7 +6,7 @@
 
 <h1>Edit Project</h1>
 
-<form method="POST" action="/projects/{{ $project->id }}">
+<form method="POST" action="{{ route('projectIndex')."/".$project->id }}">
     {{ method_field('PATCH') }}
     {{ csrf_field() }}
 
@@ -36,7 +36,7 @@
 
 </form>
 
-<form action="/projects/{{ $project->id }}" method="post">
+<form action="{{ route('projectIndex')."/".$project->id }}" method="post">
     @method('DELETE')
     @csrf
 

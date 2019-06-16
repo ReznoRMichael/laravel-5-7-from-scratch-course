@@ -6,7 +6,7 @@
 
 <h1>{{ $project->title }}</h1>
 
-<div class="content"><a href="/projects/{{ $project->id }}/edit">Edit</a></div>
+<div class="content"><a href="{{ route('projectEdit', ['id' => $project->id]) }}">Edit</a></div>
 
 <div class="content"><i>{{ $project->description }}</i></div>
 
@@ -15,7 +15,7 @@
 
     @foreach ($project->tasks as $task )
         <div>
-            <form method="POST" action="/tasks/{{ $task->id }}">
+        <form method="POST" action="{{route('projectTaskUpdate', ['id' => $task->id])}}">
                 @method('PATCH')
                 @csrf
                 <label class="checkbox {{ $task->completed ? 'is-complete' : '' }}" for="completed">
@@ -32,7 +32,7 @@
 {{-- add a new Task --}}
 
 <div>
-    <form method="POST" action="/projects/{{ $project->id }}/tasks">
+<form method="POST" action="{{route('projectTaskStore', ['id' => $project->id])}}">
         @csrf
         <div>
             <label for="description" class="new-task">Add a New Task</label>

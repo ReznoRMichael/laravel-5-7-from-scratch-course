@@ -134,11 +134,11 @@
                 </div>
                 
                 <div class="links">
-                    <a href="/">{{ $welcome }}</a>
-                    <a href="/projects">{{ $pro }}</a>
-                    <a href="/projects/create">{{ $create }}</a>
-                    <a href="/contact">{{ $contact }}</a>
-                    <a href="/about">{{ $about }}</a>
+                    <a href="{{ url('/') }}">{{ $welcome }}</a>
+                    <a href="{{ url('/projects') }}">{{ $pro }}</a>
+                    <a href="{{ url('/projects/create') }}">{{ $create }}</a>
+                    <a href="{{ url('/contact') }}">{{ $contact }}</a>
+                    <a href="{{ url('/about') }}">{{ $about }}</a>
                 </div>
 
                 @yield('content')

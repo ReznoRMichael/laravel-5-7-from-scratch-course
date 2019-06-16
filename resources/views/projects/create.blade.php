@@ -6,7 +6,7 @@
 
 <h1>{{ $create }}</h1>
 
-<form method="POST" action="/projects">
+<form method="POST" action="{{route('projectIndex')}}">
 
     {{ csrf_field() }}
 
