@@ -36,4 +36,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function projects()
+    {
+        // one user has many projects - give them to me
+        // select * from projects where owner_id = current user id
+        // the default Laravel behaviour is to query user_id, but we have set it to owner_id, so needs overriding as second argument
+        return $this -> hasMany(Project::class, 'owner_id');
+    }
 }

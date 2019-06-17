@@ -25,9 +25,9 @@ class PagesController extends Controller
         //dd($twitter, $users);
 
         $tasks = [
-            'Go to the store',
-            'Go to the market',
-            'Go to work',
+            'Learning videos: Laravel 5.7 From Scratch on Laracasts',
+            'Episodes completed: 32/38',
+            'Currently learning: User Notifications',
         ];
         return view('welcome', [
             'tasks' => $tasks

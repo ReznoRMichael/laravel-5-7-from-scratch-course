@@ -8,7 +8,7 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 
 ## Currently learned
 
-* Everything until and including Episode 27/38 (Authorization Essentials)
+* Everything until and including Episode 32/38 (Custom Events and Listeners)
 * Working with a MySQL database (Create, Read, Update, Delete)
 * Web Routes and common routing conventions (index, create, store, show, edit, update, destroy)
 * Blade and Layout files
@@ -31,6 +31,10 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 * Middleware (core concepts)
 * Restricting views of logged in users
 * Gate component - Authorization Essentials
+* Simple debugging - Laravel Telescope
+* Mailables, sending test mails
+* Model hooks and Seesaws
+* Events and Listeners
 
 ## Technologies
 

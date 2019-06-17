@@ -4,7 +4,7 @@
 
 @section('content')
 
-<h1>{{ $welcome }}</h1>
+<h1>{{ $welcome.", ".(Auth::user() ? ucwords(Auth::user()->name) : 'Guest' ) }}</h1>
 
     <ul>
         @foreach ($tasks as $task)

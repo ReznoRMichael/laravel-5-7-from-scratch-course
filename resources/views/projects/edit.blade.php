@@ -36,6 +36,8 @@
 
 </form>
 
+@include ('errors')
+
 <form action="{{ route('projectIndex')."/".$project->id }}" method="post">
     @method('DELETE')
     @csrf

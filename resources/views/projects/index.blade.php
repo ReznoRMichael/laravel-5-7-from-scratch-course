@@ -14,11 +14,11 @@
         @endforeach
     </ul> --}}
 
-        @foreach ($projectsSQL as $project)
+        @foreach ($projects as $project)
         
             <div class="projects-list">
                 <div>
-                <a href="{{ route('projectIndex')."/".$project->id }}">{{ $project->title }}</a> | <a href="{{ route('projectEdit', ['id' => $project->id]) }}">Edit</a>
+                <a href="{{ route('projectShow', ['id' => $project->id] ) }}">{{ $project->title }}</a> | <a href="{{ route('projectEdit', ['id' => $project->id]) }}">Edit</a>
                 </div><br>
                 <i>{{ $project->description }}</i>
             </div>

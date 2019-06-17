@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>@yield('title', 'Laravel Test')</title>
+        <title>@yield('title', config('app.name'))</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -35,9 +35,10 @@
 
             ul {
                 list-style: inside;
+                text-align: left;
             }
             li {
-                margin-bottom: 1em;
+                margin-bottom: 0.5em;
             }
             h1 {
                 font-size: 30px;
@@ -130,7 +131,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel 5.7 - Learning
+                    {{ config('app.name') }}
                 </div>
                 
                 <div class="links">

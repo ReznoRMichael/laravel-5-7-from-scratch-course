@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Project; // like 'using namespace' in C++
+use App\Mail\ProjectCreated;
+use App\Events\ProjectCreatedEvent;
 
 class ProjectsController extends Controller
 {
@@ -15,22 +17,22 @@ class ProjectsController extends Controller
     }
     public function index()
     {
-        $projects = [
-            'Project 1',
-            'Project 2',
-            'Project 3',
-        ];
-
         //$projectsSQL = Project::all(); // or \App\Project
-        $projectsSQL = Project::where( 'owner_id', auth()->id() ) -> get(); // view only projects of a given owner_id
+        // projects where the owner_id is the same as the currently logged in user's id - and get the results
+        //$projectsSQL = Project::where( 'owner_id', auth()->id() ) -> get();
+
+        // different way - create a project relationship to the user (User.php)
+        // $projectsSQL = auth() -> user() -> projects;
+
+        //dump($projectsSQL);
 
         // resources/views/projects/index.blade.php
-        return view('projects.index',
-        compact('projectsSQL'), [
-            'projects' => $projects
-            ]);
-            // compact() - the same, but shorter as =>
-            
+        // compact() - the same, but shorter as =>
+        // return view('projects.index', compact('projectsSQL') );
+        // other way - put the variable directly here in []
+        return view('projects.index', [
+            'projects' => auth() -> user() -> projects    
+        ]);
     }
     
     // create a new project (subpage)
@@ -55,17 +57,29 @@ class ProjectsController extends Controller
             'description' => request('description')
         ]); */
 
-        $attributes = request() -> validate([
+        /* $attributes = request() -> validate([
             'title' => ['required', 'min:3', 'max:191'],
             'description' => ['required', 'min:3']
-        ]);
+        ]); */
+
+        $attributes = $this -> validateProject();
 
         // shorter version
         //Project::create( request( ['title', 'description'] ) );
         // even shorter version
 
         $attributes['owner_id'] = auth()->id();
+
+        /* $project = Project::create( $attributes );
+
+        // send a mail on creating a new project
+        \Mail::to($project->owner->email) -> send(
+            new ProjectCreated($project)
+        ); */
+
         Project::create( $attributes );
+
+        // event(new ProjectCreatedEvent($project));
 
         // redirect to /projects on finish
         return redirect('/projects');
@@ -115,7 +129,7 @@ class ProjectsController extends Controller
         $this -> authorize('update', $project);
 
         // shorter version
-        $project -> update( request( ['title', 'description'] ));
+        $project -> update( $this -> validateProject() );
 
         // redirect to /projects on finish
         return redirect('/projects');
@@ -133,6 +147,14 @@ class ProjectsController extends Controller
 
         // redirect to /projects on finish
         return redirect('/projects');
+    }
+
+    protected function validateProject()
+    {
+        return request() -> validate([
+            'title' => ['required', 'min:3', 'max:191'],
+            'description' => ['required', 'min:3']
+        ]);
     }
 }
     
