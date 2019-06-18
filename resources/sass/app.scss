@@ -6,3 +6,102 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+* {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+}
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    height: 100vh;
+    margin: 0;
+}
+a, a:active, a:focus, a:visited {
+    font-weight: 600;
+    text-decoration: none;
+    color: #56927c;
+}
+a:hover {
+    color: #67A38D;
+}
+
+ul {
+    list-style: inside;
+    text-align: left;
+}
+li {
+    margin-bottom: 0.5em;
+}
+h1 {
+    font-size: 30px;
+}
+textarea, input[type=text] {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: top;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.title {
+    font-size: 72px;
+    margin-top: 30px;
+}
+.links {
+    margin-bottom: 50px;
+}
+
+.links > a {
+    padding: 0 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.projects-list {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f0f7f5;
+    border-radius: 10px;
+    border: 2px solid #ddede7;
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.is-complete {
+    text-decoration: line-through;
+}
+.new-task {
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 600;
+}

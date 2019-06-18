@@ -26,8 +26,8 @@ class PagesController extends Controller
 
         $tasks = [
             'Learning videos: Laravel 5.7 From Scratch on Laracasts',
-            'Episodes completed: 32/38',
-            'Currently learning: User Notifications',
+            'Episodes completed: 34/38',
+            'Currently learning: Laravel and the Front-End',
         ];
         return view('welcome', [
             'tasks' => $tasks

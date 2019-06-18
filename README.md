@@ -8,7 +8,7 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 
 ## Currently learned
 
-* Everything until and including Episode 32/38 (Custom Events and Listeners)
+* Everything until and including Episode 34/38 (Laravel and the Front-End)
 * Working with a MySQL database (Create, Read, Update, Delete)
 * Web Routes and common routing conventions (index, create, store, show, edit, update, destroy)
 * Blade and Layout files
@@ -35,6 +35,7 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 * Mailables, sending test mails
 * Model hooks and Seesaws
 * Events and Listeners
+* Basics: Webpack, Laravel Mix, SASS, Vue, NPM
 
 ## Technologies
 
