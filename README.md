@@ -1,14 +1,14 @@
 # PHP framework - Laravel 5.7 - learning project
 
-> A simple project I'm learning through the official course on Laravel 5.7 PHP framework on Laracasts (2018). [Link](https://laracasts.com/series/laravel-from-scratch-2018)
+> A simple project I did while going through the official course on Laravel 5.7 PHP framework on Laracasts (2018). [Link](https://laracasts.com/series/laravel-from-scratch-2018)
 
 ## General info
 
-A simple project I'm learning through the official course on Laravel 5.7 PHP framework on Laracasts (2018).
+A simple project I did while going through the official course on Laravel 5.7 PHP framework on Laracasts (2018).
 
 ## Currently learned
 
-* Everything until and including Episode 34/38 (Laravel and the Front-End)
+* Everything until and including Episode 38/38
 * Working with a MySQL database (Create, Read, Update, Delete)
 * Web Routes and common routing conventions (index, create, store, show, edit, update, destroy)
 * Blade and Layout files
@@ -36,6 +36,9 @@ A simple project I'm learning through the official course on Laravel 5.7 PHP fra
 * Model hooks and Seesaws
 * Events and Listeners
 * Basics: Webpack, Laravel Mix, SASS, Vue, NPM
+* Collections Essentials
+* Sessions, flash alerts and loading helpers through Composer
+* Feature and Unit testing basics
 
 ## Technologies
 
